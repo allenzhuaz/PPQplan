@@ -34,6 +34,7 @@ OC curves for specification test and PPQ plan.
 The function for plotting the OC curves and optimizing the baseline and high performance PPQ plans, given lower and upper specification limits.
 }
 \examples{
+\dontrun{
 pi.occurve(attr.name = "Total Protein", attr.unit = "mg/mL",
 sigma = seq(0.01,1,0.01))
 pi.occurve(attr.name = "Total Protein", attr.unit = "mg/mL",
@@ -62,7 +63,7 @@ mu=seq(95,105,0.1), sigma=1, Llim=95, Ulim=105, n=10, add.reference=TRUE)
 
 pi.occurve(attr.name = "Protein Concentration", attr.unit="\%",
 mu=seq(90, 110, 0.1), sigma=1.25, Llim=90, Ulim=110, add.reference=TRUE)
-
+}
 }
 \references{
 Burdick, R. K., LeBlond, D. J., Pfahler, L. B., Quiroz, J., Sidor, L., Vukovinsky, K., & Zhang, L. (2017).

@@ -28,6 +28,7 @@ A numeric value of the passing/acceptance probability
 The function for calculating the probability of passing critical quality attributes (CQA) PPQ test .
 }
 \examples{
+\dontrun{
 PPQ.pp(Llim = 90, Ulim = 110, mu=105, sigma=1.5, n=10, k=3.1034)
 
 # One-sided tolerance interval with k=0.753 (95/67.5 one-sided tolerance interval LTL)
@@ -65,7 +66,7 @@ lines(mu, pp8, type="o", pch=4, col=4)
 lines(mu, pp9, type="o", pch=5, col=5)
 legend("topright", legend=paste0(rep("sigma=",5),seq(0.5,2.5,0.5)), bg="white",
 col=c(1,2,3,4,5), pch=c(1,2,3,4,5), lty=1, cex=0.8)
-
+}
 }
 \references{
 Burdick, R. K., LeBlond, D. J., Pfahler, L. B., Quiroz, J., Sidor, L., Vukovinsky, K., & Zhang, L. (2017).

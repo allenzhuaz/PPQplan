@@ -4,7 +4,7 @@ author: "Yalin Zhu (yalin.zhu@merck.com)"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Introduction to Process Performance Qualification (PPQ) Sampling Plan R Package}
+  %\VignetteIndexEntry{Introduction to PPQplan}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

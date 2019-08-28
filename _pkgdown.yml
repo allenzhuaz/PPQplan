@@ -1,0 +1,41 @@
+destination: docs
+template:
+  params: 
+    bootswatch: cerulean
+  navbar:
+  type: inverse
+reference:
+- title: Specification Test
+  contents:
+  - rl.pp
+- title: PPQ Plan Using Statistical Intervals with General Multipler 
+  contents:
+  - PPQ.pp
+  - PPQ.occurve
+  - PPQ.ctplot
+  - PPQ.ggplot
+- title: PPQ Plan Using Prediction Interval
+  contents:
+  - pi.pp
+  - pi.occurve
+  - pi.ctplot
+- title: PPQ Plan Using Tolerance Interval
+  contents:
+  - ti.pp
+  - ti.occurve
+  - ti.ctplot
+- title: General Sampling Plan with Specification Limit
+  contents:
+  - pp
+  - heatmap_ly
+articles:
+  - title: Introduction to PPQplan Package
+    contents:
+    - PPQplan-vignette
+  - title: PPQ Power Assessment Theoretical Results
+    contents:
+    - PPQnote
+pkgdown:
+  as_is: true
+url: https://allenzhuaz.github.io/PPQplan/
+

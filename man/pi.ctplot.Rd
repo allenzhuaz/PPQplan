@@ -34,7 +34,7 @@ Heatmap (or Countour Plot) for PPQ Assessment.
 The function for plotting the heatmap to evaluate the PPQ plan based on the specification test, given lower and upper specification limits.
 }
 \examples{
-
+\dontrun{
 ## Example verifying simulation resutls in the textbook page 249
 mu <- seq(95, 105, 0.1)
 sigma <- seq(0.2, 3.5, 0.1)
@@ -51,6 +51,7 @@ mu = mu, sigma = sigma, Llim=95, Ulim=105)
 test <- data.frame(mean=c(97,98.3,102.5), sd=c(0.55, 1.5, 1.2))
 pi.ctplot(attr.name = "Sterile Concentration Assay", attr.unit = "\%", Llim=95, Ulim=105,
 mu = mu, sigma = sigma, test.point=test)
+}
 }
 \references{
 Burdick, R. K., LeBlond, D. J., Pfahler, L. B., Quiroz, J., Sidor, L., Vukovinsky, K., & Zhang, L. (2017).
