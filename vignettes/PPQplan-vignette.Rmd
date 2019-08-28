@@ -1,10 +1,10 @@
 ---
-title: "Examples for Process Performance Qualification (PPQ) Sampling Plan R Package"
+title: "Introduction to Process Performance Qualification (PPQ) Sampling Plan R Package"
 author: "Yalin Zhu (yalin.zhu@merck.com)"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Introduction to Process Performance Qualification (PPQ) Sampling Plan R Package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -23,7 +23,7 @@ library(PPQplan)
 Note: in order to better perform the dynamic plots, it is recommended to run the following code in RStudio. 
 
 
-## Functions
+# Functions
 
 This package provides several S3 functions listed as follows:
 
@@ -35,7 +35,7 @@ This package provides several S3 functions listed as follows:
 rl.pp(Llim=95, Ulim=105, mu=98, sigma=1)
 ```
 
-### The following four functions are mainly for the sampling plan using statistical intervals with general multipler
+## The following four functions are mainly for the sampling plan using statistical intervals with general multipler
 
   - `PPQ.pp`
   - `PPQ.occurve`
@@ -86,7 +86,8 @@ sigma <- seq(0.1, 4, 0.1)
 ```
 
 #### `PPQ.occurve`: plots OC curves for specification test and PPQ plan, with the options of customizing CQA name, unit, number of batch, optimizing the plans, etc.
-  
+
+
 ```{r fig.height = 6, fig.width = 8, fig.align = "center"}
 PPQ.occurve(attr.name = "Sterile Concentration Assay", attr.unit="%LC", Llim=95, Ulim=105, mu=98, sigma=seq(0.1, 10, 0.1), n=10, k=2.373)
 ```
@@ -96,6 +97,15 @@ The function can also optimize the baseline and high performance sampling plan^[
 ```{r fig.height = 6, fig.width = 8, fig.align = "center"}
 PPQ.occurve(attr.name = "Sterile Concentration Assay", attr.unit="%LC", Llim=95, Ulim=105, mu=98, sigma=seq(0.1, 10, 0.1), n=10, k=2.373, add.reference=TRUE)
 ```
+
+We can also optimize and show the Baseline and High performance reference lines only:
+
+```{r fig.height = 6, fig.width = 8, fig.align = "center"}
+PPQ.occurve(attr.name = "Sterile Concentration Assay", attr.unit="%LC", Llim=95, Ulim=105, mu=98, sigma=seq(0.1, 10, 0.1), n=10, add.reference=TRUE)
+```
+
+Since $k=2.373$ is between 1.798 (baseline) and 2.945 (high performance), the 95% confidence interval is suitable for this PPQ plan.
+  
 
 #### `PPQ.ctplot`: Heatmap (or Contour Plot) for PPQ assessment with parameter space.
   
@@ -125,7 +135,7 @@ Plot a dynamic heat map. User can hover on the plot to interactively evaluate th
  PPQ.ggplot(attr.name = "Sterile Concentration Assay", attr.unit = "%LC", Llim=95, Ulim=105, mu = mu, sigma = sigma, k=2.373, test.point = test, dynamic = TRUE)
 ```
 
-### The following three functions are used for sampling plan with prediction interval.
+## The following three functions are used for sampling plan with prediction interval.
 
   - `pi.pp`
   - `pi.occurve`
@@ -161,7 +171,7 @@ sigma <- seq(0.1,1.75,0.05)
 pi.ctplot(attr.name = "Sterile Concentration Assay", attr.unit = "%LC", Llim=95, Ulim=105, mu = mu, sigma = sigma)
 ```
 
-### The following three functions are used for sampling plan with tolerance interval.
+## The following three functions are used for sampling plan with tolerance interval.
 
   - `ti.pp`
   - `ti.occurve`
@@ -229,6 +239,20 @@ ti.ctplot(attr.name = "Extractable Volume", attr.unit = "% of NV=1mL", Llim = 10
 ```
 
 
+## The package also provides two functions for a general sampling plan based on lower and/or upper specification limits.
 
+  - `pp`
+  - `heatmap_ly`
 
+#### `pp`: calculate the probability of passing general upper and/or lower specification limit.
 
+```{r}
+ti.pp(Llim=-0.2, Ulim=0.2, mu=0.1, sigma=0.15, n=2)
+```
+
+#### `heatmap_ly`: plot a plain or dynamic heatmap (or contour plot) for a general sampling plan with specification limit.
+
+```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}
+heatmap_ly(attr.name = "Thickness", attr.unit = "%",Llim = -0.2, Ulim = 0.2, mu = seq(-0.2, 0.2, 0.001), sigma = seq(0,0.2, 0.001), test.point=data.frame(c(0.1,-0.05),c(0.15,0.05)), n=2, dynamic = T)
+
+```

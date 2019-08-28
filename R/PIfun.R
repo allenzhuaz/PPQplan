@@ -19,12 +19,14 @@
 #' \emph{Springer}.
 #' @author Yalin Zhu
 #' @examples
+#' \dontrun{
 #' pi.pp(sigma=0.5, mu=2.5, n=10, n.batch=1, Llim=1.5, Ulim=3.5, alpha=0.05)
 #'
 #' sapply(X=c(0.1,0.5, 1,2,3,4,5,10), FUN = pi.pp, mu=97, n=10, Llim=95, Ulim=105,
 #' n.batch=1, alpha=0.05)
 #' sapply(X=c(0.1,0.5, 1,2,3,4,5,10), FUN = pi.pp, mu=100, n=10, Llim=95, Ulim=105,
 #' n.batch=1, alpha=0.05)
+#' }
 #' @export
 pi.pp <- function(Llim=1.5, Ulim=3.5, mu, sigma, n=10, n.batch=1, alpha=0.05){
   t.cv <- qt((1-alpha/2), df=n-1);
@@ -61,6 +63,7 @@ pi.pp <- function(Llim=1.5, Ulim=3.5, mu, sigma, n=10, n.batch=1, alpha=0.05){
 #' \emph{Springer}.
 #' @author Yalin Zhu
 #' @examples
+#' \dontrun{
 #' pi.occurve(attr.name = "Total Protein", attr.unit = "mg/mL",
 #' sigma = seq(0.01,1,0.01))
 #' pi.occurve(attr.name = "Total Protein", attr.unit = "mg/mL",
@@ -89,7 +92,7 @@ pi.pp <- function(Llim=1.5, Ulim=3.5, mu, sigma, n=10, n.batch=1, alpha=0.05){
 #'
 #' pi.occurve(attr.name = "Protein Concentration", attr.unit="%",
 #' mu=seq(90, 110, 0.1), sigma=1.25, Llim=90, Ulim=110, add.reference=TRUE)
-#'
+#' }
 #' @export
 pi.occurve <- function(attr.name="", attr.unit="", Llim=1.5, Ulim=3.5, mu=2.5, sigma=0.1, n=10, n.batch=1, alpha=0.05, add.reference=FALSE){
   rlpp  <- rl.pp(Llim=Llim, Ulim=Ulim, mu = mu, sigma = sigma)
@@ -198,7 +201,7 @@ pi.occurve <- function(attr.name="", attr.unit="", Llim=1.5, Ulim=3.5, mu=2.5, s
 #' \emph{Springer}.
 #' @author Yalin Zhu
 #' @examples
-#'
+#' \dontrun{
 #' ## Example verifying simulation resutls in the textbook page 249
 #' mu <- seq(95, 105, 0.1)
 #' sigma <- seq(0.2, 3.5, 0.1)
@@ -215,6 +218,7 @@ pi.occurve <- function(attr.name="", attr.unit="", Llim=1.5, Ulim=3.5, mu=2.5, s
 #' test <- data.frame(mean=c(97,98.3,102.5), sd=c(0.55, 1.5, 1.2))
 #' pi.ctplot(attr.name = "Sterile Concentration Assay", attr.unit = "%", Llim=95, Ulim=105,
 #' mu = mu, sigma = sigma, test.point=test)
+#' }
 #' @export
 
 pi.ctplot <- function(attr.name="", attr.unit="", Llim=1.5, Ulim=3.5, mu, sigma, n=10, n.batch=1, alpha=0.05, test.point=c()){

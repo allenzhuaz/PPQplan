@@ -2,7 +2,7 @@ Package: PPQplan
 Type: Package
 Title: Process Performance Qualification (PPQ) Plans in Chemistry,
         Manufacturing and Controls (CMC) Statistical Analysis
-Version: 0.1.0
+Version: 1.0.0
 Author: Yalin Zhu
 Maintainer: Yalin Zhu <yalin.zhu@merck.com>
 Imports: tolerance, ggplot2, plotly
@@ -13,6 +13,3 @@ Copyright: Copyright 2018, Center for Mathematical Sciences, Merck &
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2018-06-15 13:50:03 UTC; zhuyal
-Repository: CRAN
-Date/Publication: 2018-06-15 15:26:39 UTC
