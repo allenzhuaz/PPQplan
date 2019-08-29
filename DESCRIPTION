@@ -18,7 +18,9 @@ License: MIT + file LICENSE
 Copyright: Copyright 2019, Center for Mathematical Sciences, Merck & Co., Inc.
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
+SystemRequirements: pandoc
 NeedsCompilation: no
 RoxygenNote: 6.1.1
+Encoding: UTF-8
 URL: https://allenzhuaz.github.io/PPQplan/, https://github.com/allenzhuaz/PPQplan
 BugReports: https://github.com/allenzhuaz/PPQplan/issues

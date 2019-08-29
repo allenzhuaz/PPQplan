@@ -3,6 +3,10 @@ title: "PPQ Power Assessment Theoretical Results"
 author: "Yalin Zhu  (yalin.zhu@merck.com)"
 date: "2018-02-18"
 output: pdf_document
+vignette: >
+  %\VignetteIndexEntry{PPQ Power Assessment Theoretical Results}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({

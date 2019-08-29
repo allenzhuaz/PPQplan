@@ -33,8 +33,9 @@ The function for dynamically plotting (ggplot) the heatmap to evaluate the sampl
 }
 \examples{
 \dontrun{
-heatmap_ly(attr.name = "Thickness", attr.unit = "\%",Llim = -0.2, Ulim = 0.2, mu = seq(-0.2, 0.2, 0.001), 
-sigma = seq(0,0.2, 0.001), test.point=data.frame(c(0.1,-0.05),c(0.15,0.05)), n=2, dynamic = T)
+heatmap_ly(attr.name = "Thickness", attr.unit = "\%",Llim = -0.2, Ulim = 0.2, 
+mu = seq(-0.2, 0.2, 0.001), sigma = seq(0,0.2, 0.001), 
+test.point=data.frame(c(0.1,-0.05),c(0.15,0.05)), n=2, dynamic = T)
 }
 }
 \references{

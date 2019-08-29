@@ -1,4 +1,4 @@
-utils::globalVariables(c("Mean.Value", "Std.Dev", "Pass.Prob"))
+utils::globalVariables(c("Mean", "Mean.Value", "Std.Dev", "Pass.Prob"))
 #' Probability of Passing Specification Test for a Release Batch
 #'
 #' The function for calculating the probability of passing critical quality attributes (CQA) specification test .
@@ -392,13 +392,13 @@ PPQ.ggplot <- function(attr.name="", attr.unit="", Llim, Ulim, mu, sigma, n=10, 
     ggtitle(paste0("Heatmap for ", attr.name, "\nLSL = ", Llim, attr.unit, ", USL = ", Ulim, attr.unit,  ", k = ", k))
   if(is.null(test.point)){
     if(dynamic==TRUE){
-      ggplotly(p)
+      ggplotly(p, tooltip = c("x","y", "level", "fill"))
     } else return(p)
   } else{
     test.point <- data.frame(test.point)
     colnames(test.point) <- c("Mean.Value", "Std.Dev")
     if(dynamic==TRUE){
-      ggplotly(p + geom_point(data = test.point, mapping = aes(x = Mean.Value, y=Std.Dev, z=NULL), shape=8, size=2) )
+      ggplotly(p + geom_point(data = test.point, mapping = aes(x = Mean.Value, y=Std.Dev, z=NULL), shape=8, size=2), tooltip = c("x","y", "level", "fill") )
     } else {
       return(p + geom_point(data = test.point, mapping = aes(x = Mean.Value, y=Std.Dev, z=NULL), shape=8, size=2) )
     }
@@ -449,8 +449,9 @@ pp <- function (Llim, Ulim, mu, sigma, n=1) {
 #' @author Yalin Zhu
 #' @examples
 #' \dontrun{
-#' heatmap_ly(attr.name = "Thickness", attr.unit = "%",Llim = -0.2, Ulim = 0.2, mu = seq(-0.2, 0.2, 0.001), 
-#' sigma = seq(0,0.2, 0.001), test.point=data.frame(c(0.1,-0.05),c(0.15,0.05)), n=2, dynamic = T)
+#' heatmap_ly(attr.name = "Thickness", attr.unit = "%",Llim = -0.2, Ulim = 0.2, 
+#' mu = seq(-0.2, 0.2, 0.001), sigma = seq(0,0.2, 0.001), 
+#' test.point=data.frame(c(0.1,-0.05),c(0.15,0.05)), n=2, dynamic = T)
 #' }
 #' @import ggplot2
 #' @importFrom plotly ggplotly
@@ -476,11 +477,11 @@ heatmap_ly <- function(attr.name="", attr.unit="", Llim, Ulim, mu, sigma, n=1, t
   
   if(dynamic==TRUE){
     if(is.null(test.point)){
-      ggplotly(p, tooltip = c("z", "level", "x", "y")) 
+      ggplotly(p, tooltip = c("x","y", "level", "fill")) 
     } else {
       test.point <- data.frame(test.point)
       colnames(test.point) <- c("Mean.Value", "Std.Dev")
-      ggplotly(p + geom_point(data = test.point, mapping = aes(x = Mean.Value, y=Std.Dev, z=NULL), shape=8, size=2) )
+      ggplotly(p + geom_point(data = test.point, mapping = aes(x = Mean.Value, y=Std.Dev, z=NULL), shape=8, size=2), tooltip = c("x","y", "level", "fill") )
     }
   } else{
     ct.mat <- matrix(ct.df$Pass.Prob, nrow = length(mu), ncol = length(sigma), byrow = FALSE)
