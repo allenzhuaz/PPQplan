@@ -100,12 +100,12 @@ MathJax.Hub.Config({
 <h1 class="hasAnchor">
 <a href="#preliminaries" class="anchor"></a>Preliminaries</h1>
 <p>Without loss of generality, suppose <span class="math inline">\(n\)</span> outcomes of the Critical Quality Attribute (CQA) are normally distributed, which is denoted by <span class="math inline">\(X_i \stackrel{\text{i.i.d}}{\sim} \mathcal{N}(\mu, \sigma^2)\)</span>, where <span class="math inline">\(i=1,\dots, n\)</span>, then the distributions of sample mean and standard deviation are as known: <span class="math display">\[\begin{equation}
-\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n}) \quad \dots (1)
+\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n}) \quad \cdots (1)
 \end{equation}\]</span> and <span class="math display">\[\begin{equation} \label{diststd}
-\dfrac{(n-1)S^2}{\sigma^2} \sim \chi^2 (n-1).
+\dfrac{(n-1)S^2}{\sigma^2} \sim \chi^2 (n-1). \quad \cdots (2)
 \end{equation}\]</span> Moreover, sample mean and sample standard deviation are independent under normal distribution assumption.</p>
 <p>Denote the lower and upper specification limits as <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span>, respectively. The prediction or tolerance interval can be expressed by <span class="math display">\[\begin{equation} 
-\left[ Y_1, Y_2 \right] = \left[ \bar{X} - kS, \ \bar{X} + kS \right] ,
+\left[ Y_1, Y_2 \right] = \left[ \bar{X} - kS, \ \bar{X} + kS \right], \quad \cdots (3)
 \end{equation}\]</span> where <span class="math inline">\(k\)</span> is a speicific multiplier for the interval. For example, for prediction interval, <span class="math inline">\(k=t_{1-\alpha/2,n-1}\sqrt{1+\frac{1}{n}}\)</span>.</p>
 </div>
 <div id="specification-test-for-one-release-batch" class="section level1">
@@ -115,7 +115,7 @@ MathJax.Hub.Config({
 <p><span class="math display">\[\begin{equation}
 \begin{split}
 \Pr(\text{Passing Specification for Release}) &amp; = \Pr(L \le X_{rl} \le U) \\
-&amp; = \Phi (U) - \Phi(L)
+&amp; = \Phi (U) - \Phi(L) \quad \cdots (4)
 \end{split}
 \end{equation}\]</span></p>
 <p>This probability is very easy to calculate using software, such as <code><a href="https://www.rdocumentation.org/packages/stats/topics/Normal">pnorm()</a></code> in R.</p>
@@ -126,7 +126,7 @@ MathJax.Hub.Config({
 <p><span class="math display">\[\begin{equation} \label{probpass}
 \begin{split}
 \Pr(\text{Passing a Single PPQ Batch}) &amp; = \Pr(L \le Y_1 \le Y_2 \le U) \\
-&amp; = \int_{L}^{U} \int_{L}^{y_2}f_{Y_1,Y_2}(y_1, y_2) dy_1 dy_2
+&amp; = \int_{L}^{U} \int_{L}^{y_2}f_{Y_1,Y_2}(y_1, y_2) dy_1 dy_2 \quad \cdots (5)
 \end{split}
 \end{equation}\]</span></p>
 <p>Now it is essential to obtain the bivariate joint distribution of the lower and upper prediction/tolerance interval, that is, find joint probability density function (PDF) <span class="math inline">\(f_{Y_1,Y_2}(y_1,y_2)\)</span>.</p>
@@ -140,29 +140,29 @@ MathJax.Hub.Config({
 \dfrac{1}{2} &amp; \dfrac{1}{2}\\
 \\
 -\dfrac{1}{2k} &amp; \dfrac{1}{2k}
-\end{array} \right| = \dfrac{1}{2k}.
+\end{array} \right| = \dfrac{1}{2k} \quad \cdots (6).
 \end{equation}\]</span></p>
-<p>Thus, () can be calulated as</p>
+<p>Thus, (5) can be calulated as</p>
 <p><span class="math display">\[\begin{equation} \label{extend}
 \begin{split}
 \int_{L}^{U} \int_{L}^{y_2}f_{Y_1,Y_2}(y_1, y_2) dy_1 dy_2 &amp; = 
 \int_{L}^{U} \int_{L}^{y_2}f_{\bar{X},S}\left(\dfrac{y_1+y_2}{2}, \dfrac{y_2-y_1}{2k}\right) |J| dy_1 dy_2 \\
-&amp; = \dfrac{1}{2k} \int_{L}^{U} \int_{L}^{y_2}f_{\bar{X}}\left(\dfrac{y_1+y_2}{2}\right) f_{S}\left( \dfrac{y_2-y_1}{2k}\right) dy_1 dy_2. 
+&amp; = \dfrac{1}{2k} \int_{L}^{U} \int_{L}^{y_2}f_{\bar{X}}\left(\dfrac{y_1+y_2}{2}\right) f_{S}\left( \dfrac{y_2-y_1}{2k}\right) dy_1 dy_2. \quad \cdots (7) 
 \end{split}
 \end{equation}\]</span> The second equation follows from normal sample mean and standard deviation being independent.</p>
-<p>Similarly, we can obtain the PDF of sample standard deviation <span class="math inline">\(f_S(s)\)</span>. By (), let <span class="math inline">\(v= \dfrac{(n-1)s^2}{\sigma^2}\)</span>, then Jacobian of the transformation is <span class="math display">\[\begin{equation}
-|J| = \left|\dfrac{dv}{ds}\right| = \dfrac{2(n-1)s}{\sigma^2}.
+<p>Similarly, we can obtain the PDF of sample standard deviation <span class="math inline">\(f_S(s)\)</span>. By (2), let <span class="math inline">\(v= \dfrac{(n-1)s^2}{\sigma^2}\)</span>, then Jacobian of the transformation is <span class="math display">\[\begin{equation}
+|J| = \left|\dfrac{dv}{ds}\right| = \dfrac{2(n-1)s}{\sigma^2}. \quad \cdots (8)
 \end{equation}\]</span> Thus, <span class="math display">\[\begin{equation} \label{Spdf}
 \begin{split}
 f_S(s) &amp; = f_V\left(\dfrac{(n-1)s^2}{\sigma^2}\right) |J| \\
-&amp; = \dfrac{2(n-1)s}{\sigma^2}f_V\left(\dfrac{(n-1)s^2}{\sigma^2}\right)
+&amp; = \dfrac{2(n-1)s}{\sigma^2}f_V\left(\dfrac{(n-1)s^2}{\sigma^2}\right) \quad \cdots (9)
 \end{split}
 \end{equation}\]</span></p>
-<p>Plug () in (), we can get the final results. <span class="math display">\[\begin{equation} 
+<p>Plug (9) in (7), we can get the final results. <span class="math display">\[\begin{equation} 
 \begin{split}
 &amp; \Pr(\text{Passing a Single PPQ Batch}) \\ 
 = &amp; \dfrac{1}{2k} \int_{L}^{U} \int_{L}^{y_2}f_{\bar{X}}\left(\dfrac{y_1+y_2}{2}\right) \dfrac{2(n-1)\dfrac{y_2-y_1}{2k}}{\sigma^2}f_V\left\{\dfrac{(n-1)\left[\dfrac{y_2-y_1}{2k}\right]^2}{\sigma^2}\right\}  dy_1 dy_2 \\
-= &amp; \dfrac{n-1}{2k^2 \sigma^2}\int_{L}^{U} \int_{L}^{y_2}f_{\bar{X}}\left(\dfrac{y_1+y_2}{2}\right) f_V\left\{\dfrac{(n-1)(y_2-y_1)^2}{4k^2\sigma^2}\right\} (y_2-y_1) dy_1 dy_2,
+= &amp; \dfrac{n-1}{2k^2 \sigma^2}\int_{L}^{U} \int_{L}^{y_2}f_{\bar{X}}\left(\dfrac{y_1+y_2}{2}\right) f_V\left\{\dfrac{(n-1)(y_2-y_1)^2}{4k^2\sigma^2}\right\} (y_2-y_1) dy_1 dy_2, \quad \cdots (10)
 \end{split}
 \end{equation}\]</span> where <span class="math inline">\(\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})\)</span> and <span class="math inline">\(V \sim \chi^2 (n-1)\)</span>. Then this quantity can be easily calculated by software, such as functions <code><a href="https://www.rdocumentation.org/packages/stats/topics/Normal">dnorm()</a></code>, <code><a href="https://www.rdocumentation.org/packages/stats/topics/Chisquare">dchisq()</a></code> and <code><a href="https://www.rdocumentation.org/packages/stats/topics/integrate">integrate()</a></code> in R.</p>
 <p>We can also calculate the probability of passing <span class="math inline">\(m\)</span> PPQ batches, then under the assumption of independence and similar expected performance across batches, the probability will be <span class="math display">\[ \Pr(\text{Passing } m \text{ batches }) = \{\Pr(\text{Passing a Single PPQ Batch}) \}^m\]</span></p>
