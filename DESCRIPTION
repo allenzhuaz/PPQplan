@@ -12,7 +12,7 @@ Authors@R: c(
 Maintainer: Yalin Zhu <yalin.zhu@merck.com>
 Depends: 
     R (>= 3.2.0)
-Imports: tolerance, ggplot2, plotly
+Imports: tolerance, ggplot2, plotly, rgl
 Description: Assessment for statistically-based PPQ sampling plan, including calculating the passing probability, optimizing the baseline and high performance cutoff points, visualizing the PPQ plan and power dynamically. The analytical idea is based on the simulation methods from the textbook "Burdick, R. K., LeBlond, D. J., Pfahler, L. B., Quiroz, J., Sidor, L., Vukovinsky, K., & Zhang, L. (2017). Statistical Methods for CMC Applications. In Statistical Applications for Chemistry, Manufacturing and Controls (CMC) in the Pharmaceutical Industry (pp. 227-250). Springer, Cham."
 License: MIT + file LICENSE
 Copyright: Copyright 2019, Center for Mathematical Sciences, Merck & Co., Inc.
