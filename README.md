@@ -21,7 +21,7 @@ Installation
 ------------
 
 Open R console, install the pacakge directly from
-[CRAN](https://cran.r-project.org/web/packages/PPQplan/index.html):
+[CRAN](https://cran.r-project.org/package=PPQplan):
 
     install.packages("PPQplan")
     library(PPQplan)
