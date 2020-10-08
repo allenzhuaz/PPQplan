@@ -1,5 +1,4 @@
-[![Travis build
-status](https://travis-ci.org/allenzhuaz/PPQplan.svg?branch=master)](https://travis-ci.org/allenzhuaz/PPQplan)
+[![R-CMD-check](https://github.com/allenzhuaz/PPQplan/workflows/R-CMD-check/badge.svg)](https://github.com/allenzhuaz/PPQplan/actions)
 [![](https://www.r-pkg.org/badges/version/PPQplan?color=orange)](https://cran.r-project.org/package=PPQplan)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/PPQplan?color=blue)](https://cran.r-project.org/package=PPQplan)
 [![](https://img.shields.io/badge/lifecycle-stable-freshgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
