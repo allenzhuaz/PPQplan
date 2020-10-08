@@ -49,7 +49,7 @@ PPQ_pp(Llim=95, Ulim=105, mu=98, sigma=1, n=10, n.batch = 1, k = 2.373)
 
 Comparing different scenarios for hypothetical mean and standard deviation: 
 
-```{r fig.height = 6, fig.width = 8, fig.align = "center"}
+```{r fig.height = 3, fig.width = 4, fig.align = "center"}
 sigma <- seq(0.1, 4, 0.1)
  pp1 <- sapply(X=sigma, FUN =  PPQ_pp, mu=97, n=10, Llim=95, Ulim=105, k=2.373)
  pp2 <- sapply(X=sigma, FUN =  PPQ_pp, mu=98, n=10, Llim=95, Ulim=105, k=2.373)
@@ -83,19 +83,19 @@ sigma <- seq(0.1, 4, 0.1)
 #### `PPQ_occurve`: plots OC curves for specification test and PPQ plan, with the options of customizing CQA name, unit, number of batch, optimizing the plans, etc.
 
 
-```{r fig.height = 6, fig.width = 8, fig.align = "center"}
+```{r fig.height = 3, fig.width = 4, fig.align = "center"}
 PPQ_occurve(attr.name = "Sterile Concentration Assay", attr.unit="%LC", Llim=95, Ulim=105, mu=98, sigma=seq(0.1, 10, 0.1), n=10, k=2.373)
 ```
 
 The function can also optimize the baseline and high performance sampling plan^[Burdick, R. K., LeBlond, D. J., Pfahler, L. B., Quiroz, J., Sidor, L., Vukovinsky, K., & Zhang, L. (2017). *Statistical Applications for Chemistry, Manufacturing and Controls (CMC) in the Pharmaceutical Industry*.] by using `add.reference` option.  
 
-```{r fig.height = 6, fig.width = 8, fig.align = "center"}
+```{r fig.height = 3, fig.width = 4, fig.align = "center"}
 PPQ_occurve(attr.name = "Sterile Concentration Assay", attr.unit="%LC", Llim=95, Ulim=105, mu=98, sigma=seq(0.1, 10, 0.1), n=10, k=2.373, add.reference=TRUE)
 ```
 
 We can also optimize and show the Baseline and High performance reference lines only:
 
-```{r fig.height = 6, fig.width = 8, fig.align = "center"}
+```{r fig.height = 3, fig.width = 4, fig.align = "center"}
 PPQ_occurve(attr.name = "Sterile Concentration Assay", attr.unit="%LC", Llim=95, Ulim=105, mu=98, sigma=seq(0.1, 10, 0.1), n=10, add.reference=TRUE)
 ```
 
@@ -104,7 +104,7 @@ Since $k=2.373$ is between 1.798 (baseline) and 2.945 (high performance), the 95
 
 #### `PPQ_ctplot`: Heatmap (or Contour Plot) for PPQ assessment with parameter space.
   
-```{r fig.height = 6, fig.width = 8, fig.align = "center"}
+```{r fig.height = 3, fig.width = 4, fig.align = "center"}
 mu <- seq(95,105,0.05)
 sigma <- seq(0.1,1.75,0.05)
 PPQ_ctplot(attr.name = "Sterile Concentration Assay", attr.unit = "%LC", Llim=95, Ulim=105, mu = mu, sigma = sigma, k=2.373)
@@ -115,7 +115,7 @@ PPQ_ctplot(attr.name = "Sterile Concentration Assay", attr.unit = "%LC", Llim=95
 
 #### `PPQ_ggplot`: Dynamic Heatmap (or Contour Plot) for PPQ assessment with parameter space.
 
-```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}
+```{r fig.height = 3, fig.width = 4, fig.align = "center", warning=FALSE}
  mu <- seq(95, 105, 0.05)
  sigma <- seq(0.1,1.75,0.05)
  PPQ_ggplot(attr.name = "Sterile Concentration Assay", attr.unit = "%LC", Llim=95, Ulim=105, mu = mu, sigma = sigma, k=2.373, dynamic = FALSE)
@@ -126,7 +126,7 @@ PPQ_ctplot(attr.name = "Sterile Concentration Assay", attr.unit = "%LC", Llim=95
 
 Plot a dynamic heat map. User can hover on the plot to interactively evaluate the plan with `dynamic = TRUE` option. 
  
-```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}
+```{r fig.height = 3, fig.width = 4, fig.align = "center", warning=FALSE, eval=FALSE}
  PPQ_ggplot(attr.name = "Sterile Concentration Assay", attr.unit = "%LC", Llim=95, Ulim=105, mu = mu, sigma = sigma, k=2.373, test.point = test, dynamic = TRUE)
 ```
 
@@ -147,7 +147,7 @@ pi_pp(Llim=95, Ulim=105, mu=98, sigma=1, n=10, n.batch = 1, alpha=0.05)
 
 #### `pi_occurve`: plots OC curves for specification test and PPQ plan, with the options of customizing CQA name, unit, number of batch, optimizing the plans, etc.
 
-```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}
+```{r fig.height = 3, fig.width = 4, fig.align = "center", warning=FALSE}
  pi_occurve(attr.name = "Sterile Concentration Assay", attr.unit="%LC",
  mu=97, sigma=seq(0.1, 10, 0.1), Llim=95, Ulim=105, n=10, add.reference=TRUE)
 
@@ -160,7 +160,7 @@ pi_pp(Llim=95, Ulim=105, mu=98, sigma=1, n=10, n.batch = 1, alpha=0.05)
 
 #### `pi_ctplot`: Heatmap (or Contour Plot) for PPQ assessment with parameter space.
 
-```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}
+```{r fig.height = 3, fig.width = 4, fig.align = "center", warning=FALSE}
 mu <- seq(95, 105, 0.05)
 sigma <- seq(0.1,1.75,0.05)
 pi_ctplot(attr.name = "Sterile Concentration Assay", attr.unit = "%LC", Llim=95, Ulim=105, mu = mu, sigma = sigma)
@@ -185,7 +185,7 @@ ti_pp(Llim = 100, Ulim = Inf, mu=102.5, sigma=2, alpha = 0.05, coverprob = 0.675
 
 #### `ti_occurve`: plots OC curves for specification test and PPQ plan, with the options of customizing CQA name, unit, number of batch, optimizing the plans, etc.
 
-```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}
+```{r fig.height = 3, fig.width = 4, fig.align = "center", warning=FALSE}
  ti_occurve(attr.name = "Sterile Concentration Assay", attr.unit="%",
  mu=97, sigma=seq(0.1, 10, 0.1), Llim=95, Ulim=105, n=10, add.reference=TRUE)
 
@@ -199,21 +199,21 @@ ti_pp(Llim = 100, Ulim = Inf, mu=102.5, sigma=2, alpha = 0.05, coverprob = 0.675
 Another example is test Extractable Volume using one-sided lower tolerance interval^[USP <1> https://www.usp.org/sites/default/files/usp/document/harmonization/gen-method/q08_pf_31_1_2005.pdf.]. 
 
  1. NV = 1mL, select 5 containers and pool them together 
-```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}  
+```{r fig.height = 3, fig.width = 4, fig.align = "center", warning=FALSE}  
 ti_occurve(attr.name = "Extractable Volume", attr.unit = "% of NV=1mL", Llim = 100, Ulim = Inf, mu=102.5, sigma=seq(0.2, 6 ,0.05), n=40, alpha = 0.05, coverprob = 0.675, side=1, NV=1)
 
 ti_occurve(attr.name = "Extractable Volume", attr.unit = "% of NV=1mL", Llim = 100, Ulim = Inf, mu=102.5, sigma=seq(0.2, 6 ,0.05), n=40, alpha = 0.05, coverprob = 0.78, side=1, NV=1)
 ```
 
  2. NV = 3mL, select 5 containers but not pool 
-```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}  
+```{r fig.height = 3, fig.width = 4, fig.align = "center", warning=FALSE}  
 ti_occurve(attr.name = "Extractable Volume", attr.unit = "% of NV=3mL", Llim = 100, Ulim = Inf, mu=102.5, sigma=seq(0.2, 6 ,0.05), n=40, alpha = 0.05, coverprob = 0.97, side=1, NV=3)
 
 ti_occurve(attr.name = "Extractable Volume", attr.unit = "% of NV=3mL", Llim = 100, Ulim = Inf, mu=102.5, sigma=seq(0.2, 6 ,0.05), n=40, alpha = 0.05, coverprob = 0.992, side=1, NV=3)
 ```
 
  3. NV = 6mL, select 3 containers but not pool 
-```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}  
+```{r fig.height = 3, fig.width = 4, fig.align = "center", warning=FALSE}  
 ti_occurve(attr.name = "Extractable Volume", attr.unit = "% of NV=6mL", Llim = 100, Ulim = Inf, mu=102.5, sigma=seq(0.2, 6 ,0.05), n=40, alpha = 0.05, coverprob = 0.95, side=1, NV=6)
 
 ti_occurve(attr.name = "Extractable Volume", attr.unit = "% of NV=6mL", Llim = 100, Ulim = Inf, mu=102.5, sigma=seq(0.2, 6 ,0.05), n=40, alpha = 0.05, coverprob = 0.987, side=1, NV=6)
@@ -222,7 +222,7 @@ ti_occurve(attr.name = "Extractable Volume", attr.unit = "% of NV=6mL", Llim = 1
 
 #### `ti_ctplot`: Heatmap (or Contour Plot) for PPQ assessment with parameter space.
 
-```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}
+```{r fig.height = 3, fig.width = 4, fig.align = "center", warning=FALSE}
 mu <- seq(95, 105, 0.05)
 sigma <- seq(0.1,2.5,0.05)
 ti_ctplot(attr.name = "Sterile Concentration Assay", attr.unit = "%LC", Llim=95, Ulim=105, mu = mu, sigma = sigma)
@@ -247,7 +247,7 @@ ti_pp(Llim=-0.2, Ulim=0.2, mu=0.1, sigma=0.15, n=2)
 
 #### `heatmap_ly`: plot a plain or dynamic heatmap (or contour plot) for a general sampling plan with specification limit.
 
-```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}
+```{r fig.height = 3, fig.width = 4, fig.align = "center", warning=FALSE, eval = FALSE}
 heatmap_ly(attr.name = "Thickness", attr.unit = "%",Llim = -0.2, Ulim = 0.2, mu = seq(-0.2, 0.2, 0.001), sigma = seq(0,0.2, 0.001), test.point=data.frame(c(0.1,-0.05),c(0.15,0.05)), n=2, dynamic = TRUE)
 
 ```
