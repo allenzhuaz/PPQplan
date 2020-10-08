@@ -19,7 +19,7 @@ PPQ_pp(Llim, Ulim, mu, sigma, n, n.batch, k)
 
 \item{n.batch}{number of batches for passing PPQ during validation}
 
-\item{k}{general mulipler for constructing the specific interval}
+\item{k}{general multiplier for constructing the specific interval}
 }
 \value{
 A numeric value of the passing/acceptance probability

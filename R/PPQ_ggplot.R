@@ -1,4 +1,4 @@
-#' Heatmap/Contour GGPlot for Dynamically Assessing Power of the CQA PPQ Plan Using General Multiplier.
+#' Heatmap/Contour Plot for Dynamically Assessing Power of the CQA PPQ Plan Using General Multiplier.
 #'
 #' The function for dynamically plotting (ggplot) the heatmap to evaluate the PPQ plan based on the specification test, given lower and upper specification limits.
 #'
@@ -12,11 +12,11 @@
 #' @param sigma hypothetical standard deviation of the attribute
 #' @param n sample size (number of locations) per batch
 #' @param n.batch number of batches for passing PPQ during validation
-#' @param k general mulipler for constructing the specific interval
+#' @param k general multiplier for constructing the specific interval
 #' @param test.point (optional) actual process data points for testing whether the processes pass PPQ
 #' @param dynamic logical; if \code{TRUE}, then convert the heatmap ggplot to dynamic graph using plotly.
 #' @return
-#' Dynamic Heatmap (or Countour Plot) for PPQ Assessment.
+#' Dynamic Heatmap (or Contour Plot) for PPQ Assessment.
 #' @seealso \code{PPQ_pp} and \code{PPQ_occurve}.
 #' @references
 #' Burdick, R. K., LeBlond, D. J., Pfahler, L. B., Quiroz, J., Sidor, L., Vukovinsky, K., & Zhang, L. (2017).
@@ -56,13 +56,13 @@ PPQ_ggplot <- function(attr.name="", attr.unit="", Llim, Ulim, mu, sigma, n=10, 
     ggtitle(paste0("Heatmap for ", attr.name, "\nLSL = ", Llim, attr.unit, ", USL = ", Ulim, attr.unit,  ", k = ", k))
   if(is.null(test.point)){
     if(dynamic==TRUE){
-      ggplotly(p, tooltip = c("x","y", "level", "fill"))
+      plotly::ggplotly(p, tooltip = c("x","y", "level", "fill"), dynamicTicks = TRUE)
     } else return(p)
   } else{
     test.point <- data.frame(test.point)
     colnames(test.point) <- c("Mean.Value", "Std.Dev")
     if(dynamic==TRUE){
-      ggplotly(p + geom_point(data = test.point, mapping = aes(x = Mean.Value, y=Std.Dev, z=NULL), shape=8, size=2), tooltip = c("x","y", "level", "fill") )
+      ggplotly(p + geom_point(data = test.point, mapping = aes(x = Mean.Value, y=Std.Dev, z=NULL), shape=8, size=2), tooltip = c("x","y", "level", "fill"), dynamicTicks = TRUE)
     } else {
       return(p + geom_point(data = test.point, mapping = aes(x = Mean.Value, y=Std.Dev, z=NULL), shape=8, size=2) )
     }

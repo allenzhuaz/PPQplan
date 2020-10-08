@@ -20,7 +20,7 @@ in the Pharmaceutical Industry (pp.227-250). Springer, Cham.”
 Installation
 ------------
 
-Open R console, install the pacakge directly from
+Open R console, install the package directly from
 [CRAN](https://cran.r-project.org/package=PPQplan):
 
     install.packages("PPQplan")

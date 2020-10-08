@@ -23,12 +23,12 @@ PPQ_ctplot(attr.name, attr.unit, Llim, Ulim, mu, sigma, n, n.batch, k, test.poin
 
 \item{n.batch}{number of batches for passing PPQ during validation}
 
-\item{k}{general mulipler for constructing the specific interval}
+\item{k}{general multiplier for constructing the specific interval}
 
 \item{test.point}{(optional) actual process data points for testing whether the processes pass PPQ}
 }
 \value{
-Heatmap (or Countour Plot) for PPQ Assessment.
+Heatmap (or Contour Plot) for PPQ Assessment.
 }
 \description{
 The function for plotting the heatmap to evaluate the PPQ plan based on the specification test, given lower and upper specification limits.

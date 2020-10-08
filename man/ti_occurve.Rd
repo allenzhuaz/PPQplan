@@ -26,7 +26,7 @@ coverprob, side, add.reference, NV)
 
 \item{alpha}{significant level for constructing the tolerance interval.}
 
-\item{coverprob}{converage probability for constructing the tolerance interval}
+\item{coverprob}{coverage probability for constructing the tolerance interval}
 
 \item{side}{whether a 1-sided or 2-sided tolerance interval is required (determined by side = 1 or side = 2, respectively).}
 
@@ -41,8 +41,7 @@ OC curves for specification test and PPQ plan.
 The function for  plotting the OC curve to show the PPQ plan based on the specification test, given lower and upper specification limits.
 }
 \examples{
-
-
+\dontrun{
 ti_occurve(attr.name = "Sterile Concentration Assay", attr.unit="\%",
 mu=97, sigma=seq(0.1, 10, 0.1), Llim=95, Ulim=105, n=10, add.reference=TRUE)
 
@@ -56,8 +55,7 @@ alpha = 0.05, coverprob = 0.97, side=1, NV=3)
 ti_occurve(attr.name = "Extractable Volume", attr.unit = "\% of NV=3mL",
 Llim = 100, Ulim = Inf, mu=102.5, sigma=seq(0.2, 6 ,0.05), n=40,
 alpha = 0.05, coverprob = 0.992, side=1, NV=3)
-
-
+}
 }
 \references{
 Burdick, R. K., LeBlond, D. J., Pfahler, L. B., Quiroz, J., Sidor, L., Vukovinsky, K., & Zhang, L. (2017).

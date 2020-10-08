@@ -11,10 +11,10 @@
 #' @param sigma hypothetical standard deviation of the attribute
 #' @param n sample size (number of locations) per batch
 #' @param n.batch number of batches for passing PPQ during validation
-#' @param k general mulipler for constructing the specific interval
+#' @param k general multiplier for constructing the specific interval
 #' @param test.point (optional) actual process data points for testing whether the processes pass PPQ
 #' @return
-#' Heatmap (or Countour Plot) for PPQ Assessment.
+#' Heatmap (or Contour Plot) for PPQ Assessment.
 #' @seealso \code{PPQ_pp} and \code{PPQ_occurve}.
 #' @references
 #' Burdick, R. K., LeBlond, D. J., Pfahler, L. B., Quiroz, J., Sidor, L., Vukovinsky, K., & Zhang, L. (2017).

@@ -9,7 +9,7 @@
 #' @param sigma hypothetical standard deviation of the attribute
 #' @param n sample size (number of locations) per batch
 #' @param n.batch number of batches for passing PPQ during validation
-#' @param k general mulipler for constructing the specific interval
+#' @param k general multiplier for constructing the specific interval
 #' @return
 #' A numeric value of the passing/acceptance probability
 #' @seealso \code{rl_pp}.

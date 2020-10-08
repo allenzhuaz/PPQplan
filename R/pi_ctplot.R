@@ -14,8 +14,8 @@
 #' @param alpha significant level for constructing the prediction interval.
 #' @param test.point (optional) actual process data points for testing whether the processes pass PPQ
 #' @return
-#' Heatmap (or Countour Plot) for PPQ Assessment.
-#' @seealso \code{pi.pp} and \code{pi.occurve}.
+#' Heatmap (or Contour Plot) for PPQ Assessment.
+#' @seealso \code{pi_pp} and \code{pi_occurve}.
 #' @references
 #' Burdick, R. K., LeBlond, D. J., Pfahler, L. B., Quiroz, J., Sidor, L., Vukovinsky, K., & Zhang, L. (2017).
 #' Statistical Applications for Chemistry, Manufacturing and Controls (CMC) in the Pharmaceutical Industry.
@@ -45,7 +45,7 @@
 pi_ctplot <- function(attr.name="", attr.unit="", Llim=1.5, Ulim=3.5, mu, sigma, n=10, n.batch=1, alpha=0.05, test.point=c()){
 
   para <- expand.grid(mu,sigma)
-  ct.df <- data.frame(para, sapply(1:nrow(para), function(i) pi.pp(mu = para[i,1], sigma=para[i,2], n = n, n.batch = n.batch, Llim = Llim, Ulim = Ulim, alpha = alpha)))
+  ct.df <- data.frame(para, sapply(1:nrow(para), function(i) pi_pp(mu = para[i,1], sigma=para[i,2], n = n, n.batch = n.batch, Llim = Llim, Ulim = Ulim, alpha = alpha)))
   colnames(ct.df) <- c("Mean", "Std Dev", "Passing Probability")
 
   ct.mat<-matrix(ct.df$`Passing Probability`, nrow=length(mu), ncol=length(sigma), byrow=FALSE)

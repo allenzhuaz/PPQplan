@@ -13,7 +13,7 @@
 #' @param n sample size (number of locations) per batch
 #' @param n.batch number of batches for passing PPQ during validation
 #' @param alpha significant level for constructing the tolerance interval.
-#' @param coverprob converage probability for constructing the tolerance interval
+#' @param coverprob coverage probability for constructing the tolerance interval
 #' @param side whether a 1-sided or 2-sided tolerance interval is required (determined by side = 1 or side = 2, respectively).
 #' @param add.reference logical; if \code{TRUE}, then add reference OC curves (Baseline and High Performance) in the plot.
 #' @param NV nominal volume for the specification test.
@@ -26,7 +26,7 @@
 #' \emph{Springer}.
 #' @author Yalin Zhu
 #' @examples
-#'
+#' \dontrun{
 #' ti_occurve(attr.name = "Sterile Concentration Assay", attr.unit="%",
 #' mu=97, sigma=seq(0.1, 10, 0.1), Llim=95, Ulim=105, n=10, add.reference=TRUE)
 #'
@@ -40,7 +40,7 @@
 #' ti_occurve(attr.name = "Extractable Volume", attr.unit = "% of NV=3mL",
 #' Llim = 100, Ulim = Inf, mu=102.5, sigma=seq(0.2, 6 ,0.05), n=40,
 #' alpha = 0.05, coverprob = 0.992, side=1, NV=3)
-#'
+#' }
 #' @export
 ti_occurve <- function(attr.name="", attr.unit="", Llim, Ulim, mu, sigma, n=10, n.batch=1, alpha=0.05, coverprob=0.675, side=2, add.reference=FALSE, NV=10){
   rlpp  <- rl_pp(Llim=Llim, Ulim=Ulim, mu = mu, sigma = sigma, NV=NV)

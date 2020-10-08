@@ -19,17 +19,19 @@ This package provides several assessment functions for statistically-based PPQ s
 Installation
 ------------
 
-Open R console, install the pacakge directly from [CRAN](https://cran.r-project.org/package=PPQplan):
+Open R console, install the package directly from [CRAN](https://cran.r-project.org/package=PPQplan):
 
-```r
+```{r eval=FALSE}
 install.packages("PPQplan")
 library(PPQplan)
 ```
 
+
 Or install the development version from GitHub, first make sure to install the `devtools` package:
 
-```r
+```{r eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("allenzhuaz/PPQplan")
 ```
+
 

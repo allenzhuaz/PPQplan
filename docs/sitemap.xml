@@ -4,19 +4,10 @@
     <loc>https://allenzhuaz.github.io/PPQplan//index.html</loc>
   </url>
   <url>
-    <loc>https://allenzhuaz.github.io/PPQplan//reference/PPQ_ctplot.html</loc>
-  </url>
-  <url>
-    <loc>https://allenzhuaz.github.io/PPQplan//reference/PPQ_ggplot.html</loc>
-  </url>
-  <url>
-    <loc>https://allenzhuaz.github.io/PPQplan//reference/PPQ_occurve.html</loc>
-  </url>
-  <url>
-    <loc>https://allenzhuaz.github.io/PPQplan//reference/PPQ_pp.html</loc>
-  </url>
-  <url>
     <loc>https://allenzhuaz.github.io/PPQplan//reference/heatmap_ly.html</loc>
+  </url>
+  <url>
+    <loc>https://allenzhuaz.github.io/PPQplan//reference/k_factor.html</loc>
   </url>
   <url>
     <loc>https://allenzhuaz.github.io/PPQplan//reference/pi_ctplot.html</loc>
@@ -29,6 +20,18 @@
   </url>
   <url>
     <loc>https://allenzhuaz.github.io/PPQplan//reference/pp.html</loc>
+  </url>
+  <url>
+    <loc>https://allenzhuaz.github.io/PPQplan//reference/PPQ_ctplot.html</loc>
+  </url>
+  <url>
+    <loc>https://allenzhuaz.github.io/PPQplan//reference/PPQ_ggplot.html</loc>
+  </url>
+  <url>
+    <loc>https://allenzhuaz.github.io/PPQplan//reference/PPQ_occurve.html</loc>
+  </url>
+  <url>
+    <loc>https://allenzhuaz.github.io/PPQplan//reference/PPQ_pp.html</loc>
   </url>
   <url>
     <loc>https://allenzhuaz.github.io/PPQplan//reference/rl_pp.html</loc>

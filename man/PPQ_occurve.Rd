@@ -23,7 +23,7 @@ PPQ_occurve(attr.name, attr.unit, Llim, Ulim, mu, sigma, n, n.batch, k, add.refe
 
 \item{n.batch}{number of batches for passing PPQ during validation}
 
-\item{k}{general mulipler for constructing the specific interval}
+\item{k}{general multiplier for constructing the specific interval}
 
 \item{add.reference}{logical; if \code{TRUE}, then add reference OC curves (Baseline and High Performance) in the plot.}
 }

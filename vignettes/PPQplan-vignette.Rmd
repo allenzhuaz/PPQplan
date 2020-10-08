@@ -13,19 +13,24 @@ This vignette summarizes the functions in the `PPQplan` package, and provides so
 
 **Note: in order to better perform the dynamic plots, it is recommended to run the following code in RStudio. **
 
+```{r}
+devtools::load_all()
+```
+
+
 # Functions
 
 This package provides several S3 functions listed as follows:
 
 #### `rl_pp`: calculates probability of pass the specification test.
 
-**Example:** Consider some sterile concentration assay as a CQA, the lower and upper specification limits are 95% and 105%, if the hypothetical mean and standard devaiton are 98% and 1%, then the probability of passing the specification test will be caluclated as follow. 
+**Example:** Consider some sterile concentration assay as a CQA, the lower and upper specification limits are 95% and 105%, if the hypothetical mean and standard deviation are 98% and 1%, then the probability of passing the specification test will be calculated as follow. 
 
 ```{r}
 rl_pp(Llim=95, Ulim=105, mu=98, sigma=1)
 ```
 
-## The following four functions are mainly for the sampling plan using statistical intervals with general multipler
+## The following four functions are mainly for the sampling plan using statistical intervals with general multiplier
 
   - `PPQ_pp`
   - `PPQ_occurve`
@@ -34,7 +39,7 @@ rl_pp(Llim=95, Ulim=105, mu=98, sigma=1)
 
 For the above example, assume the PPQ study reports a sample of 10 assay results per batch, test only one batch. Then a general multiplier for constructing 95% two-sided prediction interval can be calculated as $k=2.373$. 
 
-#### `PPQ_pp`: calcualtes the probability of passing some critical quality attributes (CQA) PPQ test using a general constant multiplier `k`. 
+#### `PPQ_pp`: calculates the probability of passing some critical quality attributes (CQA) PPQ test using a general constant multiplier `k`. 
   
 
 
@@ -42,7 +47,7 @@ For the above example, assume the PPQ study reports a sample of 10 assay results
 PPQ_pp(Llim=95, Ulim=105, mu=98, sigma=1, n=10, n.batch = 1, k = 2.373)
 ```
 
-Comparing different senarios for hypothetical mean and standard deviation: 
+Comparing different scenarios for hypothetical mean and standard deviation: 
 
 ```{r fig.height = 6, fig.width = 8, fig.align = "center"}
 sigma <- seq(0.1, 4, 0.1)
@@ -131,7 +136,7 @@ Plot a dynamic heat map. User can hover on the plot to interactively evaluate th
   - `pi_occurve`
   - `pi_ctplot`
   
-#### `pi_pp`: calcualtes the probability of passing the PPQ test using prediction interval with confidence level $100 \times 1-\alpha$.  
+#### `pi_pp`: calculates the probability of passing the PPQ test using prediction interval with confidence level $100 \times 1-\alpha$.  
 
 Use the same example with `alpha=0.05` option.
 ```{r}
@@ -167,7 +172,7 @@ pi_ctplot(attr.name = "Sterile Concentration Assay", attr.unit = "%LC", Llim=95,
   - `ti_occurve`
   - `ti_ctplot`
   
-#### `ti_pp`: calcualtes the probability of passing the PPQ test using one-sided or two-sided tolerance interval with confidence level $100 \times 1-\alpha$.  
+#### `ti_pp`: calculates the probability of passing the PPQ test using one-sided or two-sided tolerance interval with confidence level $100 \times 1-\alpha$.  
 
 Use the same example with `alpha=0.05` option.
 ```{r}
@@ -243,6 +248,6 @@ ti_pp(Llim=-0.2, Ulim=0.2, mu=0.1, sigma=0.15, n=2)
 #### `heatmap_ly`: plot a plain or dynamic heatmap (or contour plot) for a general sampling plan with specification limit.
 
 ```{r fig.height = 6, fig.width = 8, fig.align = "center", warning=FALSE}
-heatmap_ly(attr.name = "Thickness", attr.unit = "%",Llim = -0.2, Ulim = 0.2, mu = seq(-0.2, 0.2, 0.001), sigma = seq(0,0.2, 0.001), test.point=data.frame(c(0.1,-0.05),c(0.15,0.05)), n=2, dynamic = T)
+heatmap_ly(attr.name = "Thickness", attr.unit = "%",Llim = -0.2, Ulim = 0.2, mu = seq(-0.2, 0.2, 0.001), sigma = seq(0,0.2, 0.001), test.point=data.frame(c(0.1,-0.05),c(0.15,0.05)), n=2, dynamic = TRUE)
 
 ```

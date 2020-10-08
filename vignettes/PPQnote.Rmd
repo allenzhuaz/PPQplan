@@ -1,8 +1,8 @@
 ---
 title: "PPQ Power Assessment Theoretical Results"
 author: "Yalin Zhu  (yalin.zhu@merck.com)"
-date: "2018-02-18"
-output: pdf_document
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{PPQ Power Assessment Theoretical Results}
   %\VignetteEngine{knitr::rmarkdown}
@@ -29,7 +29,7 @@ Denote the lower and upper specification limits as $L$ and $U$, respectively. Th
 \begin{equation} 
 \left[ Y_1, Y_2 \right] = \left[ \bar{X} - kS, \ \bar{X} + kS \right] ,
 \end{equation}
-where $k$ is a speicific multiplier for the interval. For example, for prediction interval, $k=t_{1-\alpha/2,n-1}\sqrt{1+\frac{1}{n}}$.
+where $k$ is a specific multiplier for the interval. For example, for prediction interval, $k=t_{1-\alpha/2,n-1}\sqrt{1+\frac{1}{n}}$.
 
 # Specification test for one release batch
 
@@ -71,7 +71,7 @@ Solve $\bar{X}$ and $S$ as $x=\dfrac{y_1+y_2}{2}$ and $s=\dfrac{y_2-y_1}{2k}$, t
 \end{array} \right| = \dfrac{1}{2k}.
 \end{equation}
 
-Thus, (\ref{probpass}) can be calulated as
+Thus, (\ref{probpass}) can be calculated as
 
 \begin{equation} \label{extend}
 \begin{split}

@@ -28,7 +28,7 @@ pi_ctplot(attr.name, attr.unit, Llim, Ulim, mu, sigma, n, n.batch, alpha, test.p
 \item{test.point}{(optional) actual process data points for testing whether the processes pass PPQ}
 }
 \value{
-Heatmap (or Countour Plot) for PPQ Assessment.
+Heatmap (or Contour Plot) for PPQ Assessment.
 }
 \description{
 The function for plotting the heatmap to evaluate the PPQ plan based on the specification test, given lower and upper specification limits.
@@ -59,7 +59,7 @@ Statistical Applications for Chemistry, Manufacturing and Controls (CMC) in the 
 \emph{Springer}.
 }
 \seealso{
-\code{pi.pp} and \code{pi.occurve}.
+\code{pi_pp} and \code{pi_occurve}.
 }
 \author{
 Yalin Zhu

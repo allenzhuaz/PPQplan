@@ -13,11 +13,11 @@
 #' @param n sample size (number of locations) per batch
 #' @param n.batch number of batches for passing PPQ during validation
 #' @param alpha significant level for constructing the tolerance interval.
-#' @param coverprob converage probability for constructing the tolerance interval
+#' @param coverprob coverage probability for constructing the tolerance interval
 #' @param side whether a 1-sided or 2-sided tolerance interval is required (determined by side = 1 or side = 2, respectively).
 #' @param test.point (optional) actual process data points for testing whether the processes pass PPQ
 #' @return
-#' Heatmap (or Countour Plot) for PPQ Assessment.
+#' Heatmap (or Contour Plot) for PPQ Assessment.
 #' @seealso \code{ti_pp} and \code{ti_occurve}.
 #' @references
 #' Burdick, R. K., LeBlond, D. J., Pfahler, L. B., Quiroz, J., Sidor, L., Vukovinsky, K., & Zhang, L. (2017).
@@ -25,7 +25,7 @@
 #' \emph{Springer}.
 #' @author Yalin Zhu
 #' @examples
-#'
+#' \dontrun{
 #' mu <- seq(95,105,0.1)
 #' sigma <- seq(0.1,2.5,0.1)
 #' ti_ctplot(attr.name = "Sterile Concentration Assay", attr.unit = "%",
@@ -34,7 +34,7 @@
 #' ti_ctplot(attr.name = "Extractable Volume", attr.unit = "% of NV=1mL",
 #' Llim = 100, Ulim = Inf, mu=seq(100, 110, 0.5), sigma=seq(0.2, 15 ,0.5), n=40,
 #' alpha = 0.05, coverprob = 0.675, side=1)
-#'
+#' }
 #' @export
 ti_ctplot <- function(attr.name="", attr.unit="", Llim, Ulim, mu, sigma, n=10, n.batch=1, alpha=0.05, coverprob=0.675, side=2, test.point=c()){
 

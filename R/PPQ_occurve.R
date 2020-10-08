@@ -11,7 +11,7 @@
 #' @param sigma hypothetical standard deviation of the attribute
 #' @param n sample size (number of locations) per batch
 #' @param n.batch number of batches for passing PPQ during validation
-#' @param k general mulipler for constructing the specific interval
+#' @param k general multiplier for constructing the specific interval
 #' @param add.reference logical; if \code{TRUE}, then add reference OC curves (Baseline and High Performance) in the plot.
 #' @return
 #' OC curves for specification test and PPQ plan.

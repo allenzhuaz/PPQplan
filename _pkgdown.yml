@@ -1,29 +1,30 @@
 destination: docs
 template:
-  params: 
+  params:
     bootswatch: cerulean
   navbar:
   type: inverse
 reference:
 - title: Specification Test
   contents:
-  - rl.pp
-- title: PPQ Plan Using Statistical Intervals with General Multipler 
+  - rl_pp
+- title: PPQ Plan Using Statistical Intervals with General Multipler
   contents:
-  - PPQ.pp
-  - PPQ.occurve
-  - PPQ.ctplot
-  - PPQ.ggplot
+  - PPQ_pp
+  - PPQ_occurve
+  - PPQ_ctplot
+  - PPQ_ggplot
 - title: PPQ Plan Using Prediction Interval
   contents:
-  - pi.pp
-  - pi.occurve
-  - pi.ctplot
+  - pi_pp
+  - pi_occurve
+  - pi_ctplot
 - title: PPQ Plan Using Tolerance Interval
   contents:
-  - ti.pp
-  - ti.occurve
-  - ti.ctplot
+  - ti_pp
+  - ti_occurve
+  - ti_ctplot
+  - k_factor
 - title: General Sampling Plan with Specification Limit
   contents:
   - pp

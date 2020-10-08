@@ -26,20 +26,20 @@ alpha, coverprob, side, test.point)
 
 \item{alpha}{significant level for constructing the tolerance interval.}
 
-\item{coverprob}{converage probability for constructing the tolerance interval}
+\item{coverprob}{coverage probability for constructing the tolerance interval}
 
 \item{side}{whether a 1-sided or 2-sided tolerance interval is required (determined by side = 1 or side = 2, respectively).}
 
 \item{test.point}{(optional) actual process data points for testing whether the processes pass PPQ}
 }
 \value{
-Heatmap (or Countour Plot) for PPQ Assessment.
+Heatmap (or Contour Plot) for PPQ Assessment.
 }
 \description{
 The function for plotting the heatmap to evaluate the PPQ plan based on the specification test, given lower and upper specification limits.
 }
 \examples{
-
+\dontrun{
 mu <- seq(95,105,0.1)
 sigma <- seq(0.1,2.5,0.1)
 ti_ctplot(attr.name = "Sterile Concentration Assay", attr.unit = "\%",
@@ -48,7 +48,7 @@ mu = mu, sigma = sigma, Llim=95, Ulim=105)
 ti_ctplot(attr.name = "Extractable Volume", attr.unit = "\% of NV=1mL",
 Llim = 100, Ulim = Inf, mu=seq(100, 110, 0.5), sigma=seq(0.2, 15 ,0.5), n=40,
 alpha = 0.05, coverprob = 0.675, side=1)
-
+}
 }
 \references{
 Burdick, R. K., LeBlond, D. J., Pfahler, L. B., Quiroz, J., Sidor, L., Vukovinsky, K., & Zhang, L. (2017).

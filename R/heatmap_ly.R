@@ -50,11 +50,11 @@ heatmap_ly <- function(attr.name="", attr.unit="", Llim, Ulim, mu, sigma, n=1, t
 
   if(dynamic==TRUE){
     if(is.null(test.point)){
-      ggplotly(p, tooltip = c("x","y", "level", "fill"))
+      ggplotly(p, tooltip = c("x","y", "level", "fill"), dynamicTicks = TRUE)
     } else {
       test.point <- data.frame(test.point)
       colnames(test.point) <- c("Mean.Value", "Std.Dev")
-      ggplotly(p + geom_point(data = test.point, mapping = aes(x = Mean.Value, y=Std.Dev, z=NULL), shape=8, size=2), tooltip = c("x","y", "level", "fill") )
+      ggplotly(p + geom_point(data = test.point, mapping = aes(x = Mean.Value, y=Std.Dev, z=NULL), shape=8, size=2), tooltip = c("x","y", "level", "fill"), dynamicTicks = TRUE)
     }
   } else{
     ct.mat <- matrix(ct.df$Pass.Prob, nrow = length(mu), ncol = length(sigma), byrow = FALSE)
